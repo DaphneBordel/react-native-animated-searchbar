@@ -24,7 +24,6 @@ const Wrapper = ({
     searchBarIcon,
     searchScreen,
     fullHeaderStyle,
-    setHiddenStatusBar,
     children
 }) => {
     const header = useRef();
@@ -40,7 +39,6 @@ const Wrapper = ({
         header.current.close();
         searchbar.current.open();
         searchView.current.open();
-        setHiddenStatusBar(true);
     }, [header, searchbar,searchView]);
 
     const close = useCallback(() => {
@@ -48,7 +46,6 @@ const Wrapper = ({
         header.current.open();
         searchbar.current.close();
         searchView.current.close();
-        setHiddenStatusBar(false);
     }, [header, searchbar,searchView])
 
     const onLayoutFullHeader = useCallback(event => {
