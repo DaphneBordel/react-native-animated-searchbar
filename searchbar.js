@@ -75,11 +75,9 @@ class Searchbar extends Component {
             searchbarStyle,
             onChangeText,
             searchBarIcon,
-            headerStyle,
-            backgroundColor
         } = this.props;
         return (
-            <View onLayout={onLayout} style={[styles.container, {backgroundColor: backgroundColor}, headerStyle]}>
+            <View onLayout={onLayout} style={styles.container}>
                 <View style={[styles.barWrapper, searchbarStyle]}>
                     {searchBarIcon}
                     <TextInput

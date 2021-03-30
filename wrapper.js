@@ -5,7 +5,6 @@ import Searchbar from './searchbar';
 import SearchView from './searchView';
 
 const Wrapper = ({
-    backgroundColor,
     animationDuration,
     headerRight,
     headerLeft,
@@ -70,7 +69,6 @@ const Wrapper = ({
                     title={title}
                     titleStyle={titleStyle}
                     duration={animationDuration}
-                    backgroundColor={backgroundColor}
                     headerStyle={headerStyle}
                     right={headerRight}
                     left={headerLeft}
@@ -80,7 +78,6 @@ const Wrapper = ({
                     ref={searchbar}
                     onFocus={open}
                     onCancel={close}
-                    backgroundColor={backgroundColor}
                     duration={animationDuration}
                     placeholder={placeholder}
                     cancelText={cancelText}

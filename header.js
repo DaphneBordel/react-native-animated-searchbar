@@ -42,9 +42,9 @@ class Header extends Component {
 
     render() {
         const { animatedHeight } = this.state;
-        const { backgroundColor, title, left, right, titleStyle } = this.props;
+        const { title, left, right, titleStyle, headerStyle } = this.props;
         return (
-            <View style={{ backgroundColor: backgroundColor}}>
+            <View style={headerStyle}>
                 <SafeAreaView>
                     <Animated.View style={[{ height: animatedHeight }, styles.contianer]}>
                         <View style={styles.side}>
