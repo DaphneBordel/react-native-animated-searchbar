@@ -23,6 +23,7 @@ const Wrapper = ({
     headerHeight, // Header height without searchbar
     searchBarIcon,
     searchScreen,
+    containerStyle,
     children
 }) => {
     const header = useRef();
@@ -62,7 +63,7 @@ const Wrapper = ({
         setDimensions({ ...dimensions, searchbarHeight: height });
     }, [dimensions, setDimensions])
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, containerStyle]}>
             <View onLayout={onLayoutFullHeader}>
                 <Header
                     ref={header}
