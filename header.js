@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Animated, SafeAreaView, View, StyleSheet, Text } from 'react-native';
 
 class Header extends Component {
-    hidden = false;
     isOpened = true;
     state = {
         animatedHeight: new Animated.Value(this.props.height),
@@ -52,11 +51,11 @@ class Header extends Component {
                 <SafeAreaView>
                     <Animated.View style={[{ height: animatedHeight }, styles.contianer]}>
                         <View style={styles.side}>
-                            {!isOpened ? left : null}
+                            {isOpened ? left : null}
                         </View>
                         <Text style={titleStyle}>{!isOpened ? title : ''}</Text>
                         <View style={styles.side}>
-                            {!isOpened ? right : null}
+                            {isOpened ? right : null}
                         </View>
                     </Animated.View>
                 </SafeAreaView>
