@@ -42,7 +42,7 @@ class Header extends Component {
 
     render() {
         const { animatedHeight } = this.state;
-        const { backgroundColor, title, left, right } = this.props;
+        const { backgroundColor, title, left, right, titleStyle } = this.props;
         return (
             <View style={{ backgroundColor: backgroundColor}}>
                 <SafeAreaView>
@@ -50,7 +50,7 @@ class Header extends Component {
                         <View style={styles.side}>
                             {left}
                         </View>
-                        <Text style={styles.title}>{title}</Text>
+                        <Text style={titleStyle}>{title}</Text>
                         <View style={styles.side}>
                             {right}
                         </View>
@@ -62,16 +62,19 @@ class Header extends Component {
     }
 }
 
+Header.defaultProps = {
+    titleStyle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: "#f1f1f1"
+    }
+}
+
 const styles = StyleSheet.create({
     contianer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
-    },
-    title:{
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: "#f1f1f1"
     },
     side:{
         flex:1

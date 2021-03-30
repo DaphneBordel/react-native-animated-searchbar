@@ -10,6 +10,7 @@ const Wrapper = ({
     headerRight,
     headerLeft,
     title,
+    titleStyle,
     cancelText,
     cancelTextStyle,
     cancelTextMarginRight,
@@ -67,6 +68,7 @@ const Wrapper = ({
                 <Header
                     ref={header}
                     title={title}
+                    titleStyle={titleStyle}
                     duration={animationDuration}
                     backgroundColor={backgroundColor}
                     headerStyle={headerStyle}
