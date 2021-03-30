@@ -36,14 +36,16 @@ const Wrapper = ({
     });
 
     useEffect(() => {
-        if (hiddenHeader){
-            header.current.close();
-            searchbar.current.open();
-            searchView.current.open();
-        } else {
-            header.current.open();
-            searchbar.current.close();
-            searchView.current.close();
+        if (header.current && searchView.current && searchbar.current){
+            if (hiddenHeader){
+                header.current.close();
+                searchbar.current.open();
+                searchView.current.open();
+            } else {
+                header.current.open();
+                searchbar.current.close();
+                searchView.current.close();
+            }
         }
     },[hiddenHeader])
 
