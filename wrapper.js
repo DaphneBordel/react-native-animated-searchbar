@@ -24,6 +24,7 @@ const Wrapper = ({
     searchBarIcon,
     searchScreen,
     fullHeaderStyle,
+    initSearchValue,
     children
 }) => {
     const header = useRef();
@@ -95,6 +96,7 @@ const Wrapper = ({
                     onLayout={onLayoutSearchBar}
                     onChangeText={onChangeText}
                     searchBarIcon={searchBarIcon}
+                    initSearchValue={initSearchValue}
                 />
             </View>
             {

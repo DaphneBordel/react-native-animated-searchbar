@@ -75,6 +75,7 @@ class Searchbar extends Component {
             searchbarStyle,
             onChangeText,
             searchBarIcon,
+            initSearchValue,
         } = this.props;
         return (
             <View onLayout={onLayout} style={styles.container}>
@@ -86,6 +87,7 @@ class Searchbar extends Component {
                         placeholder={placeholder}
                         placeholderTextColor={placeholderTextColor}
                         onChangeText={onChangeText}
+                        value={initSearchValue ? initSearchValue : null}
                     />
                 </View>
                 {
