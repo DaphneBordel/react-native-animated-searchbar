@@ -65,6 +65,7 @@ const Wrapper = ({
         if (searchbarHeight && searchbarHeight >= height) return // layout was already called
         setDimensions({ ...dimensions, searchbarHeight: height });
     }, [dimensions, setDimensions])
+    console.log("hiddenHeader ?", hiddenHeader)
     return (
         <View style={styles.container}>
             <View onLayout={onLayoutFullHeader} style={fullHeaderStyle}>
