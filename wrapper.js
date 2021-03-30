@@ -37,7 +37,7 @@ const Wrapper = ({
 
     const open = useCallback(() => {
         onPressCancel && onPressCancel();
-        setHiddenHeader(false);
+        setHiddenHeader(true);
         header.current.close();
         searchbar.current.open();
         searchView.current.open();
@@ -45,7 +45,7 @@ const Wrapper = ({
 
     const close = useCallback(() => {
         onFocus && onFocus();
-        setHiddenHeader(true);
+        setHiddenHeader(false);
         header.current.open();
         searchbar.current.close();
         searchView.current.close();
