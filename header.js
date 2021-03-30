@@ -44,7 +44,7 @@ class Header extends Component {
     
     render() {
         const { animatedHeight } = this.state;
-        const { title, left, right, titleStyle, headerStyle } = this.props;
+        const { title, left, right, titleStyle, headerStyle, hiddenHeader } = this.props;
         const {isOpened} = this;
         console.log("isOpened",isOpened);
         return (
@@ -52,7 +52,7 @@ class Header extends Component {
                 <SafeAreaView>
                     <Animated.View style={[{ height: animatedHeight }, styles.contianer]}>
                         <View style={styles.side}>
-                            {left}
+                            {hiddenHeader && left}
                         </View>
                         <Text style={titleStyle}>{title}</Text>
                         <View style={styles.side}>

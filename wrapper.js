@@ -35,20 +35,6 @@ const Wrapper = ({
         searchbarHeight: undefined
     });
 
-    useEffect(() => {
-        if (header.current && searchView.current && searchbar.current){
-            if (hiddenHeader){
-                header.current.close();
-                searchbar.current.open();
-                searchView.current.open();
-            } else {
-                header.current.open();
-                searchbar.current.close();
-                searchView.current.close();
-            }
-        }
-    },[hiddenHeader])
-
     const open = useCallback(() => {
         onPressCancel && onPressCancel();
         setHiddenHeader(true);
@@ -77,7 +63,7 @@ const Wrapper = ({
     return (
         <View style={styles.container}>
             <View onLayout={onLayoutFullHeader} style={fullHeaderStyle}>
-                {!hiddenHeader && <Header
+                <Header
                     ref={header}
                     title={title}
                     titleStyle={titleStyle}
@@ -86,7 +72,9 @@ const Wrapper = ({
                     right={headerRight}
                     left={headerLeft}
                     height={headerHeight}
-                />}
+                    hiddenHeader={hiddenHeader}
+
+                />
                 <Searchbar
                     ref={searchbar}
                     onFocus={open}
