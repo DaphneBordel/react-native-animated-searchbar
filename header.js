@@ -53,7 +53,7 @@ class Header extends Component {
                         <View style={styles.side}>
                             {isOpened ? left : null}
                         </View>
-                        <Text style={titleStyle}>{!isOpened ? title : ''}</Text>
+                        <Text style={titleStyle}>{isOpened ? title : ''}</Text>
                         <View style={styles.side}>
                             {isOpened ? right : null}
                         </View>
