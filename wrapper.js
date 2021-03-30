@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Header from './header';
 import Searchbar from './searchbar';
@@ -35,21 +35,27 @@ const Wrapper = ({
         searchbarHeight: undefined
     });
 
+    useEffect(() => {
+        if (hiddenHeader){
+            header.current.close();
+            searchbar.current.open();
+            searchView.current.open();
+        } else {
+            header.current.open();
+            searchbar.current.close();
+            searchView.current.close();
+        }
+    },[hiddenHeader])
+
     const open = useCallback(() => {
         onPressCancel && onPressCancel();
         setHiddenHeader(true);
-        header.current.close();
-        searchbar.current.open();
-        searchView.current.open();
-    }, [header, searchbar,searchView]);
+    }, []);
 
     const close = useCallback(() => {
         onFocus && onFocus();
         setHiddenHeader(false);
-        header.current.open();
-        searchbar.current.close();
-        searchView.current.close();
-    }, [header, searchbar,searchView])
+    }, [])
 
     const onLayoutFullHeader = useCallback(event => {
         const { fullHeaderHeight } = dimensions;
