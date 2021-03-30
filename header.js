@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Animated, SafeAreaView, View, StyleSheet, Text } from 'react-native';
 
 class Header extends Component {
+    hidden = false;
     isOpened = true;
+    transition = 'fade';
     state = {
         animatedHeight: new Animated.Value(this.props.height),
 
@@ -28,8 +30,10 @@ class Header extends Component {
         const { animatedHeight } = this.state;
         const { duration } = this.props;
         const { isOpened } = this;
+
         if (!isOpened) return;
         this.isOpened = false;
+
         Animated.timing(
             animatedHeight,
             {
@@ -46,6 +50,11 @@ class Header extends Component {
         return (
             <View style={headerStyle}>
                 <SafeAreaView>
+                    <StatusBar
+                        animated={true}
+                        showHideTransition={transition}
+                        hidden={!isOpened}
+                    />
                     <Animated.View style={[{ height: animatedHeight }, styles.contianer]}>
                         <View style={styles.side}>
                             {left}
