@@ -73,12 +73,12 @@ class Searchbar extends Component {
             placeholder,
             placeholderTextColor,
             searchbarStyle,
-            backgroundColor,
             onChangeText,
-            searchBarIcon
+            searchBarIcon,
+            headerStyle,
         } = this.props;
         return (
-            <View onLayout={onLayout} style={[styles.container, { backgroundColor: backgroundColor }]}>
+            <View onLayout={onLayout} style={[styles.container, headerStyle]}>
                 <View style={[styles.barWrapper, searchbarStyle]}>
                     {searchBarIcon}
                     <TextInput
@@ -91,8 +91,8 @@ class Searchbar extends Component {
                 </View>
                 {
                     textDimensions ?
-                        <Animated.Text onPress={this.onPressCancel} style={[{ marginRight: animated }, styles.cacelText, cancelTextStyle]} >{cancelText}</Animated.Text> :
-                        <Text style={[{ opacity: 0, position: "absolute" }, styles.cacelText, cancelTextStyle]} onLayout={this.onLayout}>{cancelText}</Text>
+                        <Animated.Text onPress={this.onPressCancel} style={[{ marginRight: animated }, styles.cancelText, cancelTextStyle]} >{cancelText}</Animated.Text> :
+                        <Text style={[{ opacity: 0, position: "absolute" }, styles.cancelText, cancelTextStyle]} onLayout={this.onLayout}>{cancelText}</Text>
                 }
             </View>
         );
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     container: {
+        backgroundColor: 'blue',
         alignSelf: 'stretch',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
         flex: 1,
         marginHorizontal: 10
     },
-    cacelText: {
+    cancelText: {
         color: "#d32f2f",
         fontSize: 16,
     }
