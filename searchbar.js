@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Animated, View, StyleSheet, Text, TextInput, Keyboard } from 'react-native';
 
 class Searchbar extends Component {
-
     isOpened = false;
     containerDimensions = undefined;
 
     state = {
         animated: new Animated.Value(-100),
-        textDimensions: undefined
+        textDimensions: undefined,
     }
 
     open() {
@@ -65,7 +64,7 @@ class Searchbar extends Component {
 
 
     render() {
-        const { animated, textDimensions } = this.state;
+        const { animated, textDimensions, value } = this.state;
         const {
             cancelText,
             cancelTextStyle,
@@ -75,7 +74,7 @@ class Searchbar extends Component {
             searchbarStyle,
             onChangeText,
             searchBarIcon,
-            initSearchValue,
+            searchValue,
         } = this.props;
         return (
             <View onLayout={onLayout} style={styles.container}>
@@ -87,7 +86,7 @@ class Searchbar extends Component {
                         placeholder={placeholder}
                         placeholderTextColor={placeholderTextColor}
                         onChangeText={onChangeText}
-                        value={initSearchValue ? initSearchValue : null}
+                        value={searchValue}
                     />
                 </View>
                 {
