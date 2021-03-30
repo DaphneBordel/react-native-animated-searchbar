@@ -1,7 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Header from './header';
-import { isPortrait } from './helper';
 import Searchbar from './searchbar';
 import SearchView from './searchView';
 
