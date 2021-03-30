@@ -41,21 +41,22 @@ class Header extends Component {
             },
         ).start()
     }
-
+    
     render() {
         const { animatedHeight } = this.state;
         const { title, left, right, titleStyle, headerStyle } = this.props;
         const {isOpened} = this;
+        console.log("isOpened",isOpened);
         return (
             <View style={headerStyle}>
                 <SafeAreaView>
                     <Animated.View style={[{ height: animatedHeight }, styles.contianer]}>
                         <View style={styles.side}>
-                            {isOpened ? left : null}
+                            {isOpened && left}
                         </View>
                         <Text style={titleStyle}>{isOpened ? title : ''}</Text>
                         <View style={styles.side}>
-                            {isOpened ? right : null}
+                            {isOpened && right}
                         </View>
                     </Animated.View>
                 </SafeAreaView>
