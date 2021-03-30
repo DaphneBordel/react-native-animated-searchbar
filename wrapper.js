@@ -89,7 +89,6 @@ const Wrapper = ({
                     onLayout={onLayoutSearchBar}
                     onChangeText={onChangeText}
                     searchBarIcon={searchBarIcon}
-                    fullHeaderStyle={fullHeaderStyle}
                 />
             </View>
             {

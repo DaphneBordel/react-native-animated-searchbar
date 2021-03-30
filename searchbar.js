@@ -75,10 +75,9 @@ class Searchbar extends Component {
             searchbarStyle,
             onChangeText,
             searchBarIcon,
-            fullHeaderStyle
         } = this.props;
         return (
-            <View onLayout={onLayout} style={styles.container, this.isOpened ? fullHeaderStyle : null}>
+            <View onLayout={onLayout} style={styles.container}>
                 <View style={[styles.barWrapper, searchbarStyle]}>
                     {searchBarIcon}
                     <TextInput
