@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     container: {
-        backgroundColor: 'blue',
         alignSelf: 'stretch',
         flexDirection: 'row',
         justifyContent: 'center',
