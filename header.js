@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Animated, SafeAreaView, View, StyleSheet, Text } from 'react-native';
+import { Animated, SafeAreaView, View, StyleSheet, Text, StatusBar } from 'react-native';
 
 class Header extends Component {
     hidden = false;
