@@ -46,6 +46,7 @@ class Header extends Component {
     render() {
         const { animatedHeight } = this.state;
         const { title, left, right, titleStyle, headerStyle } = this.props;
+        const {isOpened} = this;
         return (
             <View style={headerStyle}>
                 <SafeAreaView>
