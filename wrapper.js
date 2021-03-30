@@ -15,6 +15,7 @@ const Wrapper = ({
     cancelTextMarginRight,
     placeholder,
     searchbarStyle,
+    headerStyle,
     placeholderTextColor,
     onPressCancel,
     onFocus,
@@ -68,6 +69,7 @@ const Wrapper = ({
                     title={title}
                     duration={animationDuration}
                     backgroundColor={backgroundColor}
+                    headerStyle={headerStyle}
                     right={headerRight}
                     left={headerLeft}
                     height={headerHeight}
