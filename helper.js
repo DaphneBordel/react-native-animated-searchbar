@@ -39,3 +39,11 @@ export function getStatusBarHeight(skipAndroid) {
         default: 0
     })
 }
+
+export function isPortrait(){
+    if (Dimensions.get('window').width < Dimensions.get('window').height){
+        return true;
+    } else {
+        return false;
+    }
+}

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Animated, StyleSheet, Dimensions } from 'react-native';
-import { getStatusBarHeight } from './helper';
+import { getStatusBarHeight, isPortrait } from './helper';
 
-const { height } = Dimensions.get("window");
+const { height } = isPortrait() ? Dimensions.get("window").height : Dimensions.get('window').width;
 
 class SearchView extends Component {
     isOpened = false;

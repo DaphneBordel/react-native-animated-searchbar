@@ -1,6 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Header from './header';
+import { isPortrait } from './helper';
 import Searchbar from './searchbar';
 import SearchView from './searchView';
 
@@ -29,6 +30,7 @@ const Wrapper = ({
     const header = useRef();
     const searchbar = useRef();
     const searchView = useRef();
+    const [hiddenHeader, setHiddenHeader] = useState(false); 
     const [dimensions, setDimensions] = useState({
         fullHeaderHeight: undefined,
         searchbarHeight: undefined
@@ -36,6 +38,7 @@ const Wrapper = ({
 
     const open = useCallback(() => {
         onPressCancel && onPressCancel();
+        setHiddenHeader(false);
         header.current.close();
         searchbar.current.open();
         searchView.current.open();
@@ -43,6 +46,7 @@ const Wrapper = ({
 
     const close = useCallback(() => {
         onFocus && onFocus();
+        setHiddenHeader(true);
         header.current.open();
         searchbar.current.close();
         searchView.current.close();
@@ -65,7 +69,7 @@ const Wrapper = ({
     return (
         <View style={styles.container}>
             <View onLayout={onLayoutFullHeader} style={fullHeaderStyle}>
-                <Header
+                {!hiddenHeader && <Header
                     ref={header}
                     title={title}
                     titleStyle={titleStyle}
@@ -74,7 +78,7 @@ const Wrapper = ({
                     right={headerRight}
                     left={headerLeft}
                     height={headerHeight}
-                />
+                />}
                 <Searchbar
                     ref={searchbar}
                     onFocus={open}
