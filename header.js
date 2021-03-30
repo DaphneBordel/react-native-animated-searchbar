@@ -52,11 +52,11 @@ class Header extends Component {
                 <SafeAreaView>
                     <Animated.View style={[{ height: animatedHeight }, styles.contianer]}>
                         <View style={styles.side}>
-                            {isOpened && left}
+                            {left}
                         </View>
-                        <Text style={titleStyle}>{isOpened ? title : ''}</Text>
+                        <Text style={titleStyle}>{title}</Text>
                         <View style={styles.side}>
-                            {isOpened && right}
+                            {right}
                         </View>
                     </Animated.View>
                 </SafeAreaView>
